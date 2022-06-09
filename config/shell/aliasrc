@@ -1,0 +1,100 @@
+#!/bin/sh
+
+#  __  ____   __
+# |  \/  \ \ / /
+# | |\/| |\ V /
+# | |  | | | |
+# |_|  |_| |_|
+#
+#    _________        _    _     ___    _    ____  _____ ____
+#   |__  / ___|      / \  | |   |_ _|  / \  / ___|| ____/ ___|
+#     / /\___ \     / _ \ | |    | |  / _ \ \___ \|  _| \___ \
+#  _ / /_ ___) |   / ___ \| |___ | | / ___ \ ___) | |___ ___) |
+# (_)____|____/___/_/   \_\_____|___/_/   \_\____/|_____|____/
+#            |_____|
+#
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias n="nvim" vimdiff="nvim -d"
+
+# Use $XINITRC variable if file exists.
+[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
+# sudo not required for some system commands
+for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
+	alias $command="sudo $command"
+done; unset command
+
+# Edit aliases
+alias \
+	eza="nvim ${ZDOTDIR}/aliasrc" \
+	ezrc="nvim ${ZDOTDIR}/.zshrc" \
+	exd="nvim ${HOME}/.Xdefaults" \
+	ezp="nvim ${HOME}/.zprofile" \
+	cs="sudo chmod +x" \
+	sn="sudoedit" \
+	e="exit" \
+	home="cd ~" \
+	sls="python3 -m http.server" \
+	lms="sshpass -p neto_login2002 ssh neto@justneto.me" \
+	upd="sudo pacman -Syu" # Update arch
+	alias ..="cd .."
+	alias ...="cd ../.."
+	alias ....="cd ../../.."
+	alias .....="cd ../../../.."
+
+alias \
+	cp="sudo cp -iv" \
+	mv="sudo mv -iv" \
+	rm="sudo rm -vI" \
+	mkd="mkdir -pv" \
+	rmd="sudo rm -rf" \
+	ffmpeg="ffmpeg -hide_banner"
+
+alias \
+	ls="ls -ahN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# Git aliases
+# gcb - change branch
+# gnb - new branch
+alias \
+	gcl="git clone" \
+	ga="git add ." \
+	gs="git status" \
+	gc="git commit" \
+	gps="git push" \
+	gpl="git pull" \
+	gnb="git checkout -b" \
+	gcb="git checkout" \
+	gb="git branch"
+
+# Miscellaneous
+alias \
+	m="cmatrix" \
+	nf="neofetch" \
+	img="feh" \
+	vid="mpv" \
+	aud="mpv" \
+	pdf="sudo zathura" \
+	cl="peaclock"
+
+# Edit wallpaper stuff
+alias \
+	erwp="nvim /tmp/rwptimer" \
+	srwpt="sudo cat /tmp/rwptimer" \
+	ewt="nvim /tmp/wtimer" \
+	awp="sudo chmod a+w"
+
+# Im fucking tired of writing
+alias \
+	dpm="python manage.py" \
+	rk="racket"
+
+
+
+# Latex stuff
+alias \
+	slxf="cat ~/texfontsize"

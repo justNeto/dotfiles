@@ -1,0 +1,16 @@
+#!/bin/sh
+
+alias \
+	cac="cd /home/neto/.cache" \
+	utp="cd /home/neto/UnityProjects/" \
+	cf="cd /home/neto/.config" \
+	cfz="cd /home/neto/.config/shell" \
+	dw="cd /home/neto/Downloads" \
+	dc="cd /home/neto/Documents" \
+	scb="cd /home/neto/.local/bin " \
+	src="cd /home/neto/.local/src " \
+	bf="$EDITOR /home/neto/.config/shell/bm-files" \
+	bd="$EDITOR /home/neto/.config/shell/bm-dirs" \
+	cfx="$EDITOR /home/neto/.config/x11/xresources" \
+	cfdw="$EDITOR ~/.local/src/dwm/" \
+	cfnv="$EDITOR /home/neto/.config/nvim/init.vim" \

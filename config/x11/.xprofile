@@ -1,0 +1,8 @@
+mpd &
+xset r rate 300 50 &
+remaps &
+# ~/.fehbg &
+# remaps &
+# xcompmgr &
+# pulseaudio -k && pulseaudio --start &
+# sh ~/.screenlayout/Screen.sh &
