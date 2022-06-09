@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+python3 $HOME/.local/bin/py-scripts/netpy-utils.py $@

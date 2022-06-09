@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+clear; tput cup $(($(tput lines)/3)); tput bold
+set -f
+clear; echo "Which type of file will you write?"
+dest=$(cat ~/.config/templates | fzf | cut -d'|' -f2) && notify-send "$dest"
+
+case "$dest" in
+	.py) clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest script?" && cp /home/neto/Templates/script.py $PWD && read -r name && mv script.py $name.py && nvim $name.py ;;
+
+	main.tex) clear; tput cup $(($(tput lines)/3)); tput bold ; cp /home/neto/Templates/main.tex $PWD && nvim main.tex ;;
+
+	page.tex) clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest file?" && cp /home/neto/Templates/page.tex $PWD && nvim page.tex ;;
+
+	titlepage.tex) clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; cp /home/neto/Templates/titlepage.tex $PWD && nvim titlepage.tex ;;
+
+	bib.tex) clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; cp /home/neto/Templates/mybib.bib $PWD && nvim bib.tex ;;
+
+	.asm) clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest file?" && cp /home/neto/Templates/file.asm $PWD && read -r name && mv file.asm $file.asm && nvim $name.asm ;;
+
+	.java)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest program?" && cp /home/neto/Templates/program.java $PWD && read -r name && mv program.java $name.java && nvim $name.java ;;
+
+	.c)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest program?" && cp /home/neto/Templates/program.c $PWD && read -r name && mv program.c $name.c && nvim $name.c ;;
+
+	.cpp)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest program?" && cp /home/neto/Templates/program.cpp $PWD && read -r name && mv program.cpp $name.cpp && nvim $name.cpp ;;
+
+	bash)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest script?" && cp /home/neto/Templates/shell $PWD && read -r name && mv shell $name && sudo chmod +x $name && nvim $name ;;
+
+	.html)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest file?" && cp /home/neto/Templates/file.html $PWD && read -r name && mv file.html $name.html && nvim $name.html ;;
+
+	.ms)  clear; tput cup $(($(tput lines)/3)); tput bold ; set -f; echo "How do you want to call the $dest article?" && cp /home/neto/Templates/article.ms $PWD && read -r name && mv article.ms $name.ms && nvim $name.ms ;;
+esac

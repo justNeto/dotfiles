@@ -1,0 +1,12 @@
+#!/bin/sh
+# A dmenu wrapper script for system functions.
+
+var=$(printf "lock\nshutdown\nreboot\nleave dwm" | dmenu -i -p 'What will you do with the system')
+
+case $var in
+	'lock') slock ;;
+	'shutdown') shutdown now ;;
+	'leave dwm') kill -TERM "$(pgrep -u "$USER" "\bdwm$")" ;;
+	'reboot') reboot ;;
+	*) exit 1 ;;
+esac

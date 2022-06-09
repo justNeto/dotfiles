@@ -1,0 +1,82 @@
+#!/bin/zsh
+
+# _____                 _   _
+# |  ___|   _ _ __   ___| |_(_) ___  _ __  ___
+# | |_ | | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# |  _|| |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+
+
+checkTimer () {
+	timer=60
+	[ -f /tmp/rwptimer ] && timer=$(cat /tmp/rwptimer) || echo $timer > /tmp/rwptimer
+	echo $timer
+}
+
+checkWtimer() {
+	wtimer=15
+	[ -f /tmp/wtimer ] && wtimer=$(cat /tmp/wtimer) || echo $wtimer > /tmp/wtimer
+	echo $wtimer
+}
+
+cleanCurrFolder ()
+{
+	mv /home/neto/Wallpapers/currWallpapers/* /home/neto/Wallpapers
+}
+
+changeWallpaper ()
+{
+	# Select wallpapers for all the screens
+	w1=$(find "/home/neto/Wallpapers" -maxdepth 1 -type f -print0 | shuf -z -n 1) # Selects first wallpaper
+	w1Name=$(basename $w1)
+	mv $w1 /home/neto/Wallpapers/currWallpapers
+	w1=$(ls /home/neto/Wallpapers/currWallpapers/$w1Name) # This will be the actual bg to set
+
+	w2=$(find "/home/neto/Wallpapers" -maxdepth 1 -type f -print0 | shuf -z -n 1) # Selects first wallpaper
+	w2Name=$(basename $w2)
+	mv $w2 /home/neto/Wallpapers/currWallpapers
+	w2=$(ls /home/neto/Wallpapers/currWallpapers/$w2Name) # This will be the actual bg to set
+
+	w3=$(find "/home/neto/Wallpapers" -maxdepth 1 -type f -print0 | shuf -z -n 1) # Selects first wallpaper
+	w3Name=$(basename $w3)
+	mv $w3 /home/neto/Wallpapers/currWallpapers
+	w3=$(ls /home/neto/Wallpapers/currWallpapers/$w3Name) # This will be the actual bg to set
+
+	# Set bgs
+	wal -i $w1 -a 0.92
+	sleep 1
+	feh --bg-max $w1 $w2 $w3
+
+	mv $w1 /home/neto/Wallpapers
+	mv $w2 /home/neto/Wallpapers
+	mv $w3 /home/neto/Wallpapers
+}
+
+#  __  __       _
+# |  \/  | __ _(_)_ __
+# | |\/| |/ _` | | '_ \
+# | |  | | (_| | | | | |
+# |_|  |_|\__,_|_|_| |_|
+
+
+cleanCurrFolder # Clean the tmp folder of wallpapers
+changeWallpaper # Change wallpaper the first time
+
+while true
+do
+	rm /tmp/extendtimer 2>/dev/null
+
+	defaultTimer="$(checkTimer)" # Set time to change wallpaper
+	wtimer="$(checkWtimer)"
+
+	warning="$(python3 /home/neto/.local/bin/py-scripts/warnrwpt.py $wtimer $defaultTimer)" # Time to warn about wall paper
+	sleep $defaultTimer & # Start background process to change wallpaper
+	timeID=$! # Get PID
+
+	sleep $warning && notify-send -t 3000 "Changing wallpaper in $wtimer seconds" # Start warning process
+	sleep $wtimer
+
+	[ -f /tmp/extendtimer ] && notify-send -t 3000 "Extending wallpaper duration by $(cat /tmp/rwptimer) seconds" && continue
+
+	notify-send -t 3000 "Changing wallpaper" && changeWallpaper
+done

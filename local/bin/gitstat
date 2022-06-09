@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+dispGitInfo()
+{
+	git branch > /tmp/gitbranch
+
+	while IFS= read -r line; do
+  		for (( i=0; i<${#line}; i++ )); do
+			if [[ "${line:$i:1}" == "*" ]] ; then
+			line=$(echo $line | awk '{ print substr( $0, 3 ) }')
+			[[ "$line" == "main" ]] && echo "  -> on $line" || echo "  -> on  $line"
+		fi
+  	done
+	done < "/tmp/gitbranch"
+
+	rm /tmp/gitbranch
+}
+
+checkIfGitDir()
+{
+	[ -d .git ] && dispGitInfo || git rev-parse --git-dir > /dev/null 2>&1 || echo "no  "
+}
+
+checkIfGitDir

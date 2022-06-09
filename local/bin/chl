@@ -1,0 +1,3 @@
+#!/bin/sh
+
+[ -f /tmp/lang ] && rm /tmp/lang && setxkbmap latam && notify-send "Changing to Latam keyboard..." || (touch /tmp/lang && setxkbmap us && notify-send "Changing to Us keyboard...")
