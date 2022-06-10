@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+pulseaudio --kill
+pulseaudio --start
+
+[ -f ~/.config/zsh/.zshenv ] && . ~/.config/zsh/.zshenv
