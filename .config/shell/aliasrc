@@ -53,7 +53,8 @@ alias \
 # gnb - new branch
 alias \
 	gcl="git clone" \
-	ga="git add -A" \
+	gA="git add -A" \
+	ga="git add" \
 	gs="git status" \
 	gc="git commit" \
 	gps="git push" \
