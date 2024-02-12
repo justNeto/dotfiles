@@ -54,6 +54,7 @@ tooltip {
 #custom-term,
 #custom-nemo,
 #custom-updates,
+#custom-language,
 #window,
 #clock,
 #cpu,
@@ -64,7 +65,6 @@ tooltip {
 #network,
 #workspaces,
 #pulseaudio,
-#wireplumber,
 #tray,
 #backlight {
     background: #1e1e2e;
@@ -129,7 +129,8 @@ tooltip {
 }
 
 #custom-language {
-    color: #f38ba8;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #custom-updates {
