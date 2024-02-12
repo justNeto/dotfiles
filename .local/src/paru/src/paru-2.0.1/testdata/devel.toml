@@ -1,0 +1,3 @@
+[[devel]]
+url = "testdata/git-repo"
+commit = "deadbeef"

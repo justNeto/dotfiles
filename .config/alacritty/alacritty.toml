@@ -1,0 +1,21 @@
+live_config_reload = true
+
+[shell]
+program = "/bin/zsh"
+args = ["-l"]
+
+[scrolling]
+history = 5000
+
+[font]
+size = 16
+
+normal = { family = "Inconsolata Nerd Font", style = "Regular" }
+bold = { family = "Inconsolata Nerd Font", style = "Bold" }
+italic = { family = "Inconsolata Nerd Font", style = "Italic" }
+bold_italic = { family = "Inconsolata Nerd Font", style = "Bold italic" }
+
+builtin_box_drawing = false
+
+[cursor]
+style = { shape = "Block", blinking = "Never" }

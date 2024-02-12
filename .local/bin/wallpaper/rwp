@@ -1,0 +1,79 @@
+#!/bin/zsh
+
+# _____                 _   _
+# |  ___|   _ _ __   ___| |_(_) ___  _ __  ___
+# | |_ | | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+# |  _|| |_| | | | | (__| |_| | (_) | | | \__ \
+# |_|   \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+
+
+setTimer ()
+{
+	timer=30
+	[ -f /tmp/rwptimer ] && timer=$(cat /tmp/rwptimer) || echo $timer > /tmp/rwptimer
+	echo $timer
+}
+
+changeNsfwWallpaper ()
+{
+	pkill swaybg
+	# First wallpaper
+	w1=$(find "$NSFW_WALLPAPERS" -maxdepth 1 -type f -print0 | shuf -z -n 1) # selects first wallpaper
+
+	# Actually change the wallpapers
+	wal -n -b "#000000" -i $w1 # gets color scheme for terminal
+	swaybg -i $w1 -m fit
+	sleep 1
+}
+
+
+changeSfwWallpaper ()
+{
+	pkill swaybg
+	# First wallpaper
+	w1=$(find "$SFW_WALLPAPERS" -maxdepth 1 -type f -print0 | shuf -z -n 1) # selects first wallpaper
+
+	# Actually change the wallpapers
+	wal -n -b "#000000" -i $w1 # gets color scheme for terminal
+	swaybg -i $w1 -m fit
+	sleep 1
+}
+
+#  __  __       _
+# |  \/  | __ _(_)_ __
+# | |\/| |/ _` | | '_ \
+# | |  | | (_| | | | | |
+# |_|  |_|\__,_|_|_| |_|
+
+cleanCurrFolderSfw # Clean the tmp folder of wallpapers
+cleanCurrFolderNsfw # Clean the tmp folder of wallpapers
+
+while true
+do
+	[ ! -f /tmp/sfwrw ] && notify-send -t 3000 "Setting SFW wallpaper..." && changeSfwWallpaper # set if file exist
+	[ -f /tmp/sfwrw ] && notify-send -t 3000 "Setting NSFW wallpaper" && changeNsfwWallpaper # sets if file does not exist
+
+	changeWallpaperTimer="$(setTimer)" # sets timer for changing wallpaper
+
+	until [ $changeWallpaperTimer -eq 0  ] # until the timer is 0 i.e. wallpaper will change
+	do
+  		sleep 1 & # starts the process to update the timer until wallpaper is changed
+		sleep_pid=$! # gets the pid of the process
+		notifyOnce=0
+
+		while true
+		do
+			if ps -p $sleep_pid > /dev/null # even if the process is still running, can check time to change wallpaper
+			then
+				[ $changeWallpaperTimer -eq 10 ] && [ $notifyOnce -eq 0 ]&& notify-send -t 2000 "Wallpaper will change in 10 seconds." && notifyOnce=1
+				[ -f /tmp/checkchange ] && notify-send -t 3000 "Changing wallpaper in $changeWallpaperTimer seconds." && rm /tmp/checkchange
+
+			else # if process no longer done, then it will update the timer
+  				((changeWallpaperTimer--))
+				break
+			fi
+		done
+	done
+
+	[ -f /tmp/extendtimer ] && notify-send -t 3000 "Extending wallpaper duration by $(cat /tmp/rwptimer) seconds" && rm /tmp/extendtimer && continue
+done

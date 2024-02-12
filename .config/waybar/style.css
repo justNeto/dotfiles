@@ -1,0 +1,153 @@
+* {
+    border: none;
+    border-radius: 20px;
+    font-family: Inconsolata Nerd Font;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+window#waybar {
+    background: rgba(21, 18, 27, 0);
+    color: #cdd6f4;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+	border-color: transparent;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+#workspaces button {
+    color: #8409ce;
+	border-radius: 20px;
+}
+
+#workspaces button.active {
+    color: #f7501a;
+}
+
+#workspaces button.focused {
+    color: #8409ce;
+    background: #eba0ac;
+    border-radius: 10px;
+}
+
+#workspaces button.urgent {
+    color: #8409ce;
+    background: #a6e3a1;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+	background: rgba(128, 235, 142, 0.2);
+    border-radius: 10px;
+}
+
+#custom-language,
+#custom-term,
+#custom-nemo,
+#custom-updates,
+#window,
+#clock,
+#cpu,
+#memory,
+#disk,
+#battery,
+#bluetooth,
+#network,
+#workspaces,
+#pulseaudio,
+#wireplumber,
+#tray,
+#backlight {
+    background: #1e1e2e;
+    border: 2px solid #181825;
+	border-radius: 15px;
+	margin-top: 10px;
+	margin-right: 3px;
+	margin-left: 3px;
+	margin-bottom: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+
+#pulseaudio
+{
+    border-radius: 15px;
+	padding-right: 9px;
+}
+
+#tray {
+    border-radius: 15px;
+	padding: 10px;
+}
+
+#custom-term {
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 17px;
+}
+
+#custom-nemo {
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 17px;
+}
+
+#cpu {
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#memory {
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#disk {
+    border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#workspaces {
+    background: #1e1e2e;
+    border-radius: 14px;
+    color: #8409ce;
+	margin-left: 17px;
+	padding: 5px;
+}
+
+#custom-language {
+    color: #f38ba8;
+}
+
+#custom-updates {
+    color: #f5c2e7;
+    border-radius: 17px;
+}
+
+#window {
+    border-radius: 10px;
+}
+
+#clock {
+    color: #fab387;
+	padding: 3px 12px 3px 12px;
+	margin-right: 17px;
+}
+
+#battery {
+    color: #a6e3a1;
+	/* padding: 3px 12px 3px 12px; */
+}

@@ -1,0 +1,20 @@
+#!/bin/sh
+
+alias \
+	ezp="nvim ${HOME}/.zprofile" \
+	ezrc="nvim ${ZDOTDIR}/.zshrc" \
+	ezal="nvim ${ZDOTDIR}/aliasrc" \
+	ezsht="nvim ${ZDOTDIR}/shortcutrc" \
+	ezshv="nvim ${ZDOTDIR}/.zshenv" \
+
+alias \
+	cac="lfrun ${HOME}/.cache" \
+	utp="lfrun ${HOME}/GameEngines/Unity/Projects" \
+	cf="lfrun ${HOME}/.config" \
+	cfz="lfrun ${HOME}/.config/shell" \
+	dw="lfrun ${HOME}/Downloads" \
+	dc="lfrun ${HOME}/Documents" \
+	scb="lfrun ${HOME}/.local/bin " \
+	src="lfrun ${HOME}/.local/src " \
+	cfdw="lfrun ~/.local/src/dwm/" \
+	cfnv="lfrun ${HOME}/.config/nvim/" \

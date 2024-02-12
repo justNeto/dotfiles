@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+# aux=""
+
+# while true
+# do
+# 	pc=$(xprop -root _NET_ACTIVE_WINDOW | grep -oE '[^ ]+$') // prints current window
+# 	info=$(ps ww -o ppid=,pid=,cmd= -q `xprop -id $pc | grep -w "_NET_WM_PID(CARDINAL)" | sed 's/_NET_WM_PID(CARDINAL) = //'` ) //prints ppid, pid and app
+# 	app=$(echo $info | awk '{ print $NF }')
+
+# 	if [[ "$app" == "st" ]] && [[ "$pc" != "$aux" ]]; then
+# 		echo "A terminal"
+# 		aux=$pc
+
+# 	elif [[ "$app" != "st" ]] && [[ "$pc" != "$aux" ]]; then
+# 	 	echo "Not a terminal"
+# 		aux=$pc
+# 	fi
+# done
+
+
+for FILE in /dev/pts/*
+do
+	pc=$(xprop -root _NET_ACTIVE_WINDOW | grep -oE '[^ ]+$')
+	info=$(ps ww -o ppid=,pid=,cmd= -q `xprop -id $pc | grep -w "_NET_WM_PID(CARDINAL)" | sed 's/_NET_WM_PID(CARDINAL) = //'` )
+
+	if [[ "$FILE" != "/dev/pts/ptmx" ]]; then
+
+	fi
+done

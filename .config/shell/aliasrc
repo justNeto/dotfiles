@@ -1,0 +1,80 @@
+#!/bin/sh
+
+#  __  ____   __
+# |  \/  \ \ / /
+# | |\/| |\ V /
+# | |  | | | |
+# |_|  |_| |_|
+#
+#    _________        _    _     ___    _    ____  _____ ____
+#   |__  / ___|      / \  | |   |_ _|  / \  / ___|| ____/ ___|
+#     / /\___ \     / _ \ | |    | |  / _ \ \___ \|  _| \___ \
+#  _ / /_ ___) |   / ___ \| |___ | | / ___ \ ___) | |___ ___) |
+# (_)____|____/___/_/   \_\_____|___/_/   \_\____/|_____|____/
+#            |_____|
+#
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vi="nvim" && alias n="nvim" vimdiff="nvim -d"
+
+# sudo not required for some system commands
+for command in mount umount sv pacman updatedb su shutdown poweroff reboot; do
+	alias $command="sudo $command"
+done; unset command
+
+# Edit aliases
+alias \
+	cs="sudo chmod +x" \
+	sn="sudoedit" \
+	home="cd ~" \
+	sls="python3 -m http.server" \
+	upd="yay -Syu" \
+	alias ..="cd .."
+	alias ...="cd ../.."
+	alias ....="cd ../../.."
+	alias .....="cd ../../../.."
+
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+	rmd="sudo rm -rf" \
+	ffmpeg="ffmpeg -hide_banner"
+
+alias \
+	ls="eza --icons -s=type --group-directories-first --total-size -brghHmMo"\
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# Git aliases
+# gcb - change branch
+# gnb - new branch
+alias \
+	gcl="git clone" \
+	ga="git add -A" \
+	gs="git status" \
+	gc="git commit" \
+	gps="git push" \
+	gpl="git pull" \
+	gb="git branch" \
+	gnb="git checkout -b" \
+	gcb="git checkout" \
+	gbu="git remote update origin --prune" \
+
+# Miscellaneous
+alias \
+	m="cmatrix" \
+	nf="fastfetch" \
+	img="imv" \
+	vid="mpv" \
+	aud="mpv" \
+	pdf="zathura" \
+
+# Edit wallpaper stuff
+alias \
+	erwp="nvim /tmp/rwptimer" \
+	srwpt="sudo cat /tmp/rwptimer" \
+	ewt="nvim /tmp/wtimer" \
+	awp="sudo chmod a+w"

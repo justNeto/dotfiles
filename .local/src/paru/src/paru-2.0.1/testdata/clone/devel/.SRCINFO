@@ -1,0 +1,6 @@
+pkgbase = devel
+	pkgver = 1
+	pkgrel = 1
+	arch = any
+
+pkgname = devel

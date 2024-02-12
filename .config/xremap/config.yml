@@ -1,0 +1,9 @@
+modmap:
+  - name: Caps to Meta
+    remap:
+      CAPSLOCk:
+        held: SUPER_L
+        alone: ESC
+        #alone_timeout_millis: 1000
+    device:
+      only: ['/dev/input/event3']

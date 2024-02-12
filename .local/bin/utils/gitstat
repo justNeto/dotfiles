@@ -1,0 +1,42 @@
+#!/bin/zsh
+
+dispGitInfo()
+{
+	git branch > /tmp/gitbranch
+
+	while IFS= read -r line; do
+  		for (( i=0; i<${#line}; i++ )); do
+			if [[ "${line:$i:1}" == "*" ]] ; then
+			line=$(echo $line | awk '{ print substr( $0, 3 ) }')
+			[[ "$line" == "main" ]] && echo "  -> on $line" || echo "  -> on  $line"
+		fi
+  	done
+	done < "/tmp/gitbranch"
+
+	rm /tmp/gitbranch
+}
+
+dispSubInfo()
+{
+	git branch > /tmp/gitbranch
+
+	while IFS= read -r line; do
+  		for (( i=0; i<${#line}; i++ )); do
+			if [[ "${line:$i:1}" == "*" ]] ; then
+			line=$(echo $line | awk '{ print substr( $0, 3 ) }')
+			[[ "$line" == "main" ]] && echo "Inside   repo -> on $line" || echo "inside   repo -> on  $line"
+		fi
+  	done
+	done < "/tmp/gitbranch"
+
+	rm /tmp/gitbranch
+}
+
+checkIfGitDir()
+{
+	[ -d .git ] && dispGitInfo && exit
+	[[ $(git rev-parse --git-dir 2>/dev/null >/dev/null ; echo $?) == 0 ]] && dispSubInfo && exit
+	[[ $(git rev-parse --git-dir 2>/dev/null >/dev/null ; echo $?) == 128 ]] && echo "no  " && exit
+}
+
+checkIfGitDir

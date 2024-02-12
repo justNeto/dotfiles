@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+notify-send -t 2000 "Extending wallpaper duration by $(cat /tmp/rwptimer)"
+echo "restart" > /tmp/extendtimer

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# This bash script allows you to download a google docs file based on its ID and rename it
+# Allowed output files pdf|odt|doc|rtf|html|txt
+
+choices="pdf\nodt\ndoc\nrtf\nhtml\ntxt"
+chosen=$(echo -e "$choices" | dmenu -i)
+
+wget -q "https://docs.google.com/feeds/download/documents/export/Export?id=$1&exportFormat=$chosen" --output-document $2 || echo "This google docs id does not exist"

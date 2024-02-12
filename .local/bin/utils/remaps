@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# This script is called on startup to remap keys.
+# Increase key speed via a rate change
+xset r rate 300 50
+
+# Check if caps lock is on
+capslock=$(xset -q | grep Caps | awk '{print $4}')
+
+if [ $capslock = "on" ]; then
+	xdotool key Caps_Lock
+fi
+
+setxkbmap -option caps:super
+
+# But when it is pressed only once, treat it as escape.
+killall xcape 2>/dev/null ; xcape -e 'Super_L=Escape'
+
+# Map the menu button to right super as well.
+xmodmap -e 'keycode 135 = Super_R'
+
+# Turn off numlock
+numlockx on
+
+# Set xmap input for table
+xinput map-to-output $(xinput | grep Pen | grep -o 'id=[0-9]' | grep -o '[0-9]') DP-0

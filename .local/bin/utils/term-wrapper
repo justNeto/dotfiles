@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+repaint() {
+    (cat ~/.cache/wal/sequences &)
+}
+
+repaint
+$1
