@@ -13,9 +13,7 @@ $ pacman -Syu stow
 
 Then, install the required packages from the required.txt file:
 ```bash
-# Package list can be created using the next command
-# pacman -S --needed - < required.txt
-
+# Package list can be created using pacman -Qqe > required.txt
 pacman -S --needed - < required.txt
 ```
 
