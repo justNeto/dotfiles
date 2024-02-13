@@ -1,1 +1,8 @@
+# Ignore files
 required.txt
+README.md
+.gitmodules
+.gitignore
+
+# Ignore directories
+.git/
