@@ -8,9 +8,11 @@ beautyline
 blueman
 brightnessctl
 btop
+calc
 chaotic-keyring
 chaotic-mirrorlist
 checkupdates-with-aur
+cmatrix
 coeurl
 curlftpfs
 curlie
@@ -53,6 +55,7 @@ noto-fonts-emoji
 noto-fonts-extra
 nvidia-dkms
 obs-studio
+obsidian
 paru
 phinger-cursors
 pipe-viewer-git
@@ -66,6 +69,7 @@ qbittorrent
 refind
 reflector
 ripgrep
+slack
 sof-firmware
 sof-tools
 speedtest-cli
@@ -73,6 +77,7 @@ stow
 sudo
 swaybg
 sweet-gtk-theme-dark
+telegram-desktop
 texinfo
 thunderbird
 tree
@@ -82,12 +87,13 @@ ttf-inconsolata-nerd
 unzip
 vesktop
 waybar
-whatsie
+whats
+whatsapp-for-linux
 wireplumber
 wl-clipboard
 wofi
 wpa_supplicant
-xdg-desktop-portal-hyprland-git
+xdg-desktop-portal-hyprland
 yay
 zathura
 zathura-pdf-mupdf
