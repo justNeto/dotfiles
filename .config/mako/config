@@ -2,33 +2,33 @@
 #   man 5 mako
 # To view all configuration options.
 
-font=Cozette 11
+font=Inconsolata Nerd Font 14
 format=<b>%a ⏵</b> %s\n%b
 sort=-time
 output=DP-2
 layer=overlay
-anchor=bottom-center
-background-color=#2e3440
+anchor=bottom-left
+background-color=#1e1e2e
 width=300
 height=110
 margin=5
 padding=0,5,10
 border-size=2
-border-color=#88c0d0
+# border-color=#09dcdc
 border-radius=15
 icons=0
 max-icon-size=64
 default-timeout=5000
 ignore-timeout=1
 
-[urgency=normal]
-border-color=#d08770
+[urgency=low]
+border-color=#09dcdc
 
-[urgency=high]
-border-color=#bf616a
+[urgency=critical]
+border-color=#ff511c
 default-timeout=0
 
-[app-name=lightcord]
+[app-name=vesktop]
 border-color=#88c0d0
 
 [summary~="log-.*"]
