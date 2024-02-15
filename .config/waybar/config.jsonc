@@ -49,7 +49,7 @@
 		"tooltip": false,
 		"exec": "i=$(checkupdates); echo \"$i\" |wc -l; echo \"$i\" |column -t |tr '\n' '\r'",       // # of updates and tooltip details
 		"exec-if": "zsh ~/.local/bin/utils/check-updates",
-		"on-click": "alacritty -e sudo yay -Syu ; pkill -SIGRTMIN+8 waybar", // update system
+		"on-click": "alacritty -e sudo paru -Syu ; pkill -SIGRTMIN+8 waybar", // update system
 		"signal": 8
 	},
 
