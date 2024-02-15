@@ -3,6 +3,4 @@ required.txt
 README.md
 .gitmodules
 .gitignore
-
-# Ignore directories
-.git/
+.git

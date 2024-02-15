@@ -72,6 +72,7 @@ alias \
 	vid="mpv" \
 	aud="mpv" \
 	pdf="zathura" \
+	pong="ping" \
 
 # Edit wallpaper stuff
 alias \

@@ -1,12 +1,13 @@
 #!/bin/sh
-# A dmenu wrapper script for system functions.
 
-var=$(printf "lock\nshutdown\nreboot\nleave" | wofi --show dmenu -i -p 'What will you do with the system')
+wlogout -p layer-shell
 
-case $var in
-	'lock') swaylock ;;
-	'shutdown') shutdown now ;;
-	'leave Hyprland') kill -TERM "$(pgrep -u "$USER" "\bHyprland$")" ;;
-	'reboot') reboot ;;
-	*) exit 1 ;;
-esac
+# var=$(printf "lock\nshutdown\nreboot\nleave" | wofi --show dmenu -i -p 'What will you do with the system')
+#
+# case $var in
+# 	'lock') swaylock ;;
+# 	'shutdown') shutdown now ;;
+# 	'leave Hyprland') kill -TERM "$(pgrep -u "$USER" "\bHyprland$")" ;;
+# 	'reboot') reboot ;;
+# 	*) exit 1 ;;
+# esac
