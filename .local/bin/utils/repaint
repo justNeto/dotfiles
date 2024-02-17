@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-cat ~/.cache/wal/sequences
-
-alacritty -e pulsemixer

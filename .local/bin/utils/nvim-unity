@@ -1,2 +1,0 @@
-#!/bin/zsh
-st -e nvr --servername unity $@

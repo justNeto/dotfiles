@@ -3,7 +3,8 @@
     border-radius: 20px;
     font-family: Inconsolata Nerd Font;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
+	margin: 0.1rem 0.43rem 0.1rem 0.45rem;
 }
 
 window#waybar {
@@ -19,7 +20,7 @@ window#waybar.empty #window {
 tooltip {
     background: #1e1e2e;
     border-radius: 10px;
-    border-width: 2px;
+    border-width: 0.3rem;
     border-style: solid;
     border-color: #11111b;
 }
@@ -27,6 +28,8 @@ tooltip {
 #workspaces button {
     color: #8409ce;
 	border-radius: 20px;
+	padding: 0;
+	margin: 0;
 }
 
 #workspaces button.active {
@@ -47,7 +50,7 @@ tooltip {
 
 #workspaces button:hover {
 	background: rgba(128, 235, 142, 0.2);
-    border-radius: 10px;
+    border-radius: 100px;
 }
 
 #custom-language,
@@ -69,68 +72,54 @@ tooltip {
 #backlight {
     background: #1e1e2e;
     border: 2px solid #181825;
-	border-radius: 15px;
-	margin-top: 10px;
-	margin-right: 3px;
-	margin-left: 3px;
-	margin-bottom: 0px;
-	padding-left: 6px;
-	padding-right: 6px;
+	border-radius: 10rem;
+	padding: 0.36rem 0.43rem;
 }
 
 
 #pulseaudio
 {
     border-radius: 15px;
-	padding-right: 9px;
+}
+
+#tray {
+    border-radius: 5rem;
 }
 
 #tray {
     border-radius: 15px;
-	padding: 10px;
+}
+
+#tray button.active {
+    color: #f7501a;
 }
 
 #custom-term {
-    border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 17px;
+    border-radius: 1rem;
+	padding: 0.1rem 0.2rem;
 }
 
 #custom-nemo {
-    border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 17px;
+    border-radius: 1rem;
+	padding: 0.1rem 0.2rem;
 }
 
 #cpu {
-    border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
+    border-radius: 5rem;
 }
 
 #memory {
-    border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
+    border-radius: 5rem;
 }
 
 #disk {
-    border-radius: 15px;
-	padding-left: 10px;
-	padding-right: 10px;
+    border-radius: 5rem;
 }
 
 #workspaces {
     background: #1e1e2e;
-    border-radius: 14px;
+    border-radius: 5rem;
     color: #8409ce;
-	margin-left: 17px;
-	padding: 5px;
-}
-
-#custom-language {
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 #custom-updates {
@@ -139,16 +128,15 @@ tooltip {
 }
 
 #window {
-    border-radius: 10px;
+    border-radius: 10rem;
 }
 
 #clock {
     color: #fab387;
-	padding: 3px 12px 3px 12px;
-	margin-right: 17px;
+	padding: 0 1rem;
 }
 
 #battery {
     color: #a6e3a1;
-	/* padding: 3px 12px 3px 12px; */
+	padding: 0.1rem 0.7rem;
 }

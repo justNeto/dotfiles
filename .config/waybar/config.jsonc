@@ -56,19 +56,19 @@
 	"custom/language": {
 		"format": " {}",
 		"tooltip": false,
-		"exec": "zsh ~/.local/bin/utils/get-lang",
+		"exec": "get-language",
 		"on-click": "hyprctl switchxkblayout xremap next ; pkill -SIGRTMIN+10 waybar",
 		"signal": 10
 	},
 
 	"custom/nemo": {
-		"format": "",
+		"format": "   ",
 		"tooltip" : false,
 		"on-click": "nemo",
 	},
 
 	"custom/term": {
-		"format": "",
+		"format": "   ",
 		"tooltip": false,
 		"on-click": "alacritty",
 	},
@@ -104,11 +104,11 @@
 	    "format-icons": ["󰹐", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 	    "on-scroll-down": "brightnessctl set 1%+",
 	    "on-scroll-up": "brightnessctl set 1%-",
-		"on-click": "tsb"
+		"on-click": "toggle-screen"
 	},
 
 	"pulseaudio#source": {
-		"format": "{format_source}",
+		"format": "{format_source} ",
 		"format-source": "{volume}% ",
 		"format-source-muted": "",
 		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",

@@ -1,3 +1,0 @@
-#!/bin/sh
-
-flameshot gui -p ~/ -d 3000

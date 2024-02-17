@@ -1,6 +1,0 @@
-#!/bin/zsh
-
-file=$(readlink -f "$1") # the whole path to the file
-base="${file%.*}" # name of the file before .extension
-
-sass --no-source-map -w "$file" "$base.css"

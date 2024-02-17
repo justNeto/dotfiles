@@ -1,0 +1,32 @@
+#!/bin/zsh
+
+# Define the directory to search for subdirectories
+directory_to_search="/home/neto/.local/bin/"
+
+# Find all directories recursively starting from the specified directory
+# Exclude hidden directories (those starting with .) to avoid adding unnecessary directories
+# Exclude symbolic links to avoid adding them to the PATH
+directories=$(find "$directory_to_search" -type d)
+
+# Loop through each directory found
+while IFS= read -r dir; do
+    # Check if the directory is already in the PATH
+    if [[ ":$PATH:" != *":$dir:"* ]]; then
+        # Add the directory to the PATH variable
+        export PATH="$PATH:$dir"
+    fi
+done <<< "$directories"
+
+# Initialize PATH variable
+new_path=""
+
+# Loop through each directory found
+while IFS= read -r dir; do
+    # Add the directory to the PATH variable
+    new_path="$new_path:$dir"
+done <<< "$directories"
+
+# Remove leading ':' from the path
+new_path="${new_path#:}"
+
+export PATH="$PATH:$new_path"
