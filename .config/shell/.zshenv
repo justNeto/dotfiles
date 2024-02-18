@@ -34,6 +34,9 @@ export XDG_SCREENSHOTS_DIR="$HOME/.screenshots"
 export NSFW_WALLPAPERS="$LOCAL_CONFIG_DIR/wallpapers/NSFW_WALLPAPERS"
 export SFW_WALLPAPERS="$LOCAL_CONFIG_DIR/wallpapers/SFW_WALLPAPERS"
 
+# Other
+export BROWSER="firefox"
+
 # Locales and languages
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8 lf

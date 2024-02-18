@@ -6,4 +6,4 @@ ws="$(echo 'justNeto \n University' | wofi --show=dmenu)"
 # Display a notification with the value of $ws
 notify-send $ws
 
-alacritty -e firefox -P $ws
+# firefox -P $ws

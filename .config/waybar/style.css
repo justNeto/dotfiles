@@ -80,6 +80,7 @@ tooltip {
 #pulseaudio
 {
     border-radius: 15px;
+	padding: 0 1rem 0 0.7rem;
 }
 
 #tray {

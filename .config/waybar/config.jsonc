@@ -108,7 +108,7 @@
 	},
 
 	"pulseaudio#source": {
-		"format": "{format_source} ",
+		"format": "{format_source}",
 		"format-source": "{volume}% ",
 		"format-source-muted": "",
 		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
