@@ -1,5 +1,8 @@
 #!/bin/zsh
 
+# Detect if the current directory is part of a git folder and which branch is part of
+#
+
 dispGitInfo()
 {
 	git branch > /tmp/gitbranch

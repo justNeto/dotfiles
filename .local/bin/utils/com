@@ -5,6 +5,8 @@
 #
 # Compiles .tex. groff (.mom, .ms), .rmd, .md.  Opens .sent files as sent
 # presentations.  Runs scripts based on extention or shebang
+#
+# Script by the original @LukeSmith
 
 file=$(readlink -f "$1") # the whole path to the file
 dir=$(dirname "$file") # folder where the file is
