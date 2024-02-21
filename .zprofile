@@ -10,6 +10,6 @@ export ZDOTDIR="$HOME/.config/shell"
 source $ZDOTDIR/.zshenv
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-  eval `ssh-agent -s`
-  ssh-add
+	eval $(ssh-agent)
+	ssh-add $HOME/.ssh/github-laptop
 fi

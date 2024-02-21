@@ -1,9 +1,7 @@
 #!/bin/zsh
 
 # Set ws variable to the output of the 'wofi' command
-ws="$(echo 'justNeto \n University' | wofi --show=dmenu)"
+ws=$(echo 'justNeto\nUniversity' | wofi --show=dmenu)
 
-# Display a notification with the value of $ws
-notify-send $ws
-
-# firefox -P $ws
+[[ $ws == " " ]] && ws=justNeto
+firefox -P $ws
