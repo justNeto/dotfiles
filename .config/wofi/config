@@ -3,3 +3,9 @@ allow_images=true
 image_size=24
 prompt=Open program...
 width=40%
+
+key_up=Ctrl-k
+key_down=Ctrl-j
+key_right=Ctrl-l
+key_left=Ctrl-h
+key_expand=Tab

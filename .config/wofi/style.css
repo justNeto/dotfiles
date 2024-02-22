@@ -1,32 +1,35 @@
 * {
-    border-radius: 10px;
-    border: none;
+    font-family: Inconsolata Nerd Font;
+    font-size: 22px;
+
+    border-radius: 25px;
+	color: white;
+	background-color: rgba(30, 30, 46, 0.35);
 }
 
-window {
-    border-radius: 5px;
-    font-size: 23px;
-    font-family: Inconsolata Nerd Font;
-    background-color: rgba(50, 50, 50, 0.78);
-    color: white;
-    border-bottom: 3px solid white;
+#outer-box {
+	border: 1px solid white;
+}
+
+#img {
+	padding: 0.2rem 0.4rem;
 }
 
 #entry {
-    padding: 0.25em;
+    padding: 0.6rem;
 }
 
 #entry:selected {
-    background-color: #bbccdd;
-    background: linear-gradient(90deg, #bbccdd, #dd77ff)
+	border: 1px solid white;
 }
 
-#text:selected {
-    color: #333333;
+#text {
+	/* color: white; */
 }
 
 #input {
-    background-color: rgba(50, 50, 50, 0.5);
-    color: white;
-    padding: 0.25em;
+    padding: 1rem;
+	border: 1px solid white;
+	background-color: rgba(30, 30, 46, 0.35);
+	color: white;
 }
