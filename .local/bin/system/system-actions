@@ -1,13 +1,11 @@
 #!/bin/sh
 
-wlogout -p layer-shell
+var=$(printf "lock\nshutdown\nreboot\nleave" | wofi --show dmenu -i -p 'What will you do with the system')
 
-# var=$(printf "lock\nshutdown\nreboot\nleave" | wofi --show dmenu -i -p 'What will you do with the system')
-#
-# case $var in
-# 	'lock') swaylock ;;
-# 	'shutdown') shutdown now ;;
-# 	'leave Hyprland') kill -TERM "$(pgrep -u "$USER" "\bHyprland$")" ;;
-# 	'reboot') reboot ;;
-# 	*) exit 1 ;;
-# esac
+case $var in
+	'lock') swaylock ;;
+	'shutdown') shutdown now ;;
+	'leave Hyprland') kill -TERM "$(pgrep -u "$USER" "\bHyprland$")" ;;
+	'reboot') reboot ;;
+	*) exit 1 ;;
+esac

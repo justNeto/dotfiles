@@ -6,7 +6,7 @@
 
 select=$(printf "a selected area\\ncurrent window\\nfull screen\\na selected area (copy)\\ncurrent window (copy)\\nfull screen (copy)" | wofi --show dmenu -p "Screenshot which area?")
 
-sleep 0.3
+sleep 0.5
 
 case "$select" in
 	"a selected area") grimblast --notify --freeze save area ;;
