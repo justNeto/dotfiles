@@ -2,6 +2,6 @@
 
 active_lang=$(hyprctl devices | rg xremap -A2 | rg active | awk '{print $3}')
 
-[[ $active_lang == "Spanish" ]] && echo "Es" && exit 0
-[[ $active_lang == "English" ]] && echo "En" && exit 0
-[[ $active_lang == "German" ]] && echo "De" && exit 0
+[[ $active_lang == "Spanish" ]] && notify-send 'Español' && echo "Es" && exit 0
+[[ $active_lang == "English" ]] && notify-send 'English' && echo "En" && exit 0
+[[ $active_lang == "German" ]] && notify-send 'German' && echo "De" && exit 0

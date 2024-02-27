@@ -67,7 +67,6 @@ bindkey -s '^p' 'slypl\n' # select a playlist to listen to
 #bindkey -M menuselect 'l' vi-forward-char
 #bindkey -M menuselect 'j' vi-down-line-or-history
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh # allow fuzzy finder to run
 # Load aliases and shortcuts if existent.
 [ -f "$ZDOTDIR/shortcutrc" ] && source "$ZDOTDIR/shortcutrc"
 [ -f "$ZDOTDIR/aliasrc" ] && source "$ZDOTDIR/aliasrc"
