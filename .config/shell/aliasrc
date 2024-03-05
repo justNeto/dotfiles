@@ -41,7 +41,7 @@ alias \
 	ls="eza --icons -s=type --group-directories-first --total-size -brghHmMo"\
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
+	cat="bat"
 
 # Git aliases
 # gcb - change branch
