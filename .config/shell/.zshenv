@@ -47,5 +47,7 @@ export LC_TYPE=en_US.UTF-8
 export GO_PATH=$HOME/.go
 export CARGO_PATH=$HOME/.cargo
 
+export DIFFPROG="/usr/bin/nvim"
+
 source $BIN_DIR/utils/update-path
 export PATH="$PATH:$GO_PATH/bin/:$CARGO_PATH/bin/"
