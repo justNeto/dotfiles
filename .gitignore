@@ -1,3 +1,5 @@
 .local/wallpapers
 .config/btop/btop.log
 .config/shell/.zcompdump
+.config/hypr/nvidia-gpu
+.config/hypr/intel-ig
