@@ -14,7 +14,6 @@
 		"pulseaudio#sink",
 		"custom/nemo",
 		"custom/term",
-		"custom/language",
 		"bluetooth"
 	],
 
@@ -25,11 +24,13 @@
 	],
 
 	"modules-right": [
+		"custom/language",
 		"memory",
 		"cpu",
 		"network",
 		"battery",
-		"clock"
+		"custom/date",
+		"custom/clock"
 	],
 
 	"hyprland/window": {
@@ -79,10 +80,18 @@
 		"spacing": 10
 	},
 
+	"custom/clock": {
+		"format": " {}",
+		"exec": "get-time",
+		"interval": 1,
+		"tooltip" : false,
+	},
 
-	"clock": {
-		"format": "{: %R |  %d/%m}",
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	"custom/date": {
+		"format": " {}",
+		"exec": "get-date",
+		"interval": 18000,
+		"tooltip" : false,
 	},
 
 	"battery": {
