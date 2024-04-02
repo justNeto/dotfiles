@@ -4,10 +4,11 @@
 # | |  | | |_| |  _ / /_ ___) |  _  |  _ <| |___
 # |_|  |_|\__, | (_)____|____/|_| |_|_| \_\\____|
 #         |___/
+# Prompt functionalities to be added
+#
 
 (cat ~/.cache/wal/sequences &)
 
-# Prompt functionalities to be added
 setopt autocd
 setopt interactive_comments
 stty stop undef
@@ -26,12 +27,14 @@ black='%{'$(print -P '\e[1;30m')'%}'
 greenl='%{'$(print -P '\e[1;32;5m')'%}'
 
 # Define custom psvar functions
-gitscript(){psvar[1]=$(gitstat) }
+gitscript() {
+	psvar[1]=$(gitstat)
+}
 
 add-zsh-hook precmd gitscript
 
 # In prompt a function to check last command status could be used and added to prompt, displaying the current status
-PROMPT=$'\n'"%240F${gray} ╭─   ( ${green}(${yellow}%n${green}) ${blue}| ${green}(${yellow}%~${green}) ${blue}| ${green}(${yellow}%1v${green})${gray} )"$'\n'"%240F${gray} ╰─ ${reset} "
+PROMPT=$'\n'"%240F${gray} ╭─   ( ${green}(${yellow}%n${green}) ${blue}| ${green}(${yellow}%~${green}) ${blue}| ${green}(${yellow}%1v${green})${gray} )"$'\n'"%240F${gray} ╰─ ${reset}"
 
 # Icons that could be used:
 #           
@@ -72,3 +75,4 @@ bindkey -s '^p' 'slypl\n' # select a playlist to listen to
 [ -f "$ZDOTDIR/aliasrc" ] && source "$ZDOTDIR/aliasrc"
 
 eval "$(zoxide init zsh)"
+sleep 0.1 && clear
