@@ -68,6 +68,4 @@ do
 			fi
 		done
 	done
-
-	[ -f /tmp/extendtimer ] && notify-send -t 3000 "Extending wallpaper duration by $(cat /tmp/rwptimer) seconds" && rm /tmp/extendtimer && continue
 done
