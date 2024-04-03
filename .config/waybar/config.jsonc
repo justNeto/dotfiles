@@ -41,7 +41,7 @@
 
 	"hyprland/workspaces": {
 		"format": "{name}",
-			"1": "",
+			// "1": "",
 		"sort-by-number": true
 	},
 

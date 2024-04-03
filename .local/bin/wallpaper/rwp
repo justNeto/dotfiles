@@ -1,5 +1,4 @@
 #!/bin/zsh
-
 # _____                 _   _
 # |  ___|   _ _ __   ___| |_(_) ___  _ __  ___
 # | |_ | | | | '_ \ / __| __| |/ _ \| '_ \/ __|
@@ -21,9 +20,8 @@ changeNsfwWallpaper ()
 	w1=$(find "$NSFW_WALLPAPERS" -maxdepth 1 -type f -print0 | shuf -z -n 1) # selects first wallpaper
 
 	# Actually change the wallpapers
-	wal -n -b "#000000" -i $w1 # gets color scheme for terminal
-	swaybg -i $w1 -m fit
-	sleep 1
+	wal -n -b "#000000" -i $w1 & # gets color scheme for terminal
+	swaybg -i $w1 -m fit &
 }
 
 
@@ -34,9 +32,8 @@ changeSfwWallpaper ()
 	w1=$(find "$SFW_WALLPAPERS" -maxdepth 1 -type f -print0 | shuf -z -n 1) # selects first wallpaper
 
 	# Actually change the wallpapers
-	wal -n -b "#000000" -i $w1 # gets color scheme for terminal
-	swaybg -i $w1 -m fit
-	sleep 1
+	wal -n -b "#000000" -i $w1 & # gets color scheme for terminal
+	swaybg -i $w1 -m fit &
 }
 
 #  __  __       _
@@ -44,9 +41,6 @@ changeSfwWallpaper ()
 # | |\/| |/ _` | | '_ \
 # | |  | | (_| | | | | |
 # |_|  |_|\__,_|_|_| |_|
-
-cleanCurrFolderSfw # Clean the tmp folder of wallpapers
-cleanCurrFolderNsfw # Clean the tmp folder of wallpapers
 
 while true
 do

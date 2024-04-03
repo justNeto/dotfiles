@@ -25,34 +25,6 @@ tooltip {
     border-color: #11111b;
 }
 
-#workspaces button {
-    color: #8409ce;
-	border-radius: 20px;
-	padding: 0;
-	margin: 0;
-}
-
-#workspaces button.active {
-    color: #f7501a;
-}
-
-#workspaces button.focused {
-    color: #8409ce;
-    background: #eba0ac;
-    border-radius: 10px;
-}
-
-#workspaces button.urgent {
-    color: #8409ce;
-    background: #a6e3a1;
-    border-radius: 10px;
-}
-
-#workspaces button:hover {
-	background: rgba(128, 235, 142, 0.2);
-    border-radius: 100px;
-}
-
 #custom-language,
 #custom-term,
 #custom-nemo,
@@ -77,10 +49,46 @@ tooltip {
 	padding: 0.36rem 0.43rem;
 }
 
+#workspaces {
+	padding: 0.1rem;
+	margin: 0rem 4rem;
+}
+
+#workspaces button {
+    color: #8409ce;
+	margin: 0;
+	padding: 0;
+}
+
+#workspaces button.active {
+    color: #f7501a;
+	margin: 0;
+	padding: 0;
+}
+
+#workspaces button.focused {
+    color: #8409ce;
+    background: #eba0ac;
+	margin: 0;
+	padding: 0;
+}
+
+#workspaces button.urgent {
+    color: #8409ce;
+    background: #a6e3a1;
+	margin: 0;
+	padding: 0;
+}
+
+#workspaces button:hover {
+	background: rgba(128, 235, 142, 0.2);
+	margin: 0;
+	padding: 0;
+}
 
 #pulseaudio
 {
-    border-radius: 15px;
+    border-radius: 1rem;
 	padding: 0 1rem 0 0.7rem;
 }
 
@@ -88,22 +96,8 @@ tooltip {
     border-radius: 5rem;
 }
 
-#tray {
-    border-radius: 15px;
-}
-
 #tray button.active {
     color: #f7501a;
-}
-
-#custom-term {
-    border-radius: 1rem;
-	padding: 0.1rem 0.2rem;
-}
-
-#custom-nemo {
-    border-radius: 1rem;
-	padding: 0.1rem 0.2rem;
 }
 
 #cpu {
@@ -122,6 +116,13 @@ tooltip {
     background: #1e1e2e;
     border-radius: 5rem;
     color: #8409ce;
+	margin: 0;
+	padding: 0;
+}
+
+#battery {
+    color: #a6e3a1;
+	padding: 0.1rem 0.7rem;
 }
 
 #window {
@@ -143,7 +144,12 @@ tooltip {
 	border-radius: 5rem 0 0 5rem;
 }
 
-#battery {
-    color: #a6e3a1;
-	padding: 0.1rem 0.7rem;
+#custom-term {
+    border-radius: 1rem;
+	padding: 0.1rem 0.2rem;
+}
+
+#custom-nemo {
+    border-radius: 1rem;
+	padding: 0.1rem 0.2rem;
 }
