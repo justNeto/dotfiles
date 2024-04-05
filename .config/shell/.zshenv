@@ -46,8 +46,14 @@ export LC_TYPE=en_US.UTF-8
 # Variables to be added to path and also here for easier access
 export GO_PATH=$HOME/.go
 export CARGO_PATH=$HOME/.cargo
-
 export DIFFPROG="/usr/bin/nvim"
-
 source $BIN_DIR/utils/update-path
-export PATH="$PATH:$GO_PATH/bin/:$CARGO_PATH/bin/"
+
+export PATH="$PATH:$GO_PATH/bin/:$CARGO_PATH/bin/:/usr/local/texlive/2024/bin/x86_64-linux/"
+
+export TEXMFHOME=$HOME/texmf
+export TEXMFLOCAL=/usr/local/share/texmf
+export TEXMFMAIN=/usr/share/texmf
+export TEXMFDIST=/usr/share/texmf-dist
+export TEXMFVAR=/var/lib/texmf
+export TEXMFCONFIG=$HOME/.texlive$YEAR/texmf-config
