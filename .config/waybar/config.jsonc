@@ -27,7 +27,7 @@
 		"custom/language",
 		"memory",
 		"cpu",
-		"network",
+		// "network",
 		"battery",
 		"custom/date",
 		"custom/clock"
@@ -152,18 +152,18 @@
 		"on-click": "alacritty -e term-wrapper btop"
 	},
 
-	"network": {
-		"interface": "wlan0",
-		"format": "󰛳 {ifname}",
-		"format-wifi": " {signalStrength}%: {essid}",
-		"format-ethernet": "󰈀 {ifname}",
-		"format-disconnected": "󰲛",
-		"tooltip-format": "{ifname}",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
-		"tooltip-format-ethernet": " {ifname}",
-		"tooltip-format-disconnected": "Disconnected",
-		"max-length": 15
-	},
+	// "network": {
+	// 	"interface": "wlan0 || enp48s0 ",
+	// 	"format": "󰛳 {ifname}",
+	// 	"format-wifi": " {signalStrength}%: {essid}",
+	// 	"format-ethernet": "󰈀 {ifname}",
+	// 	"format-disconnected": "󰲛",
+	// 	"tooltip-format": "{ifname}",
+	// 	"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+	// 	"tooltip-format-ethernet": " {ifname}",
+	// 	"tooltip-format-disconnected": "Disconnected",
+	// 	"max-length": 15
+	// },
 
 	"bluetooth": {
 		"format": "󰂯 {status}",

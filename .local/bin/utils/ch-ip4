@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+curl -4 icanhazip.com
