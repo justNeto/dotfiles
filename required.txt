@@ -71,7 +71,6 @@ pulsemixer
 pv
 python-pywal
 qbittorrent
-refind
 reflector
 ripgrep
 slack-desktop
@@ -96,9 +95,6 @@ ueberzug
 unzip
 ventoy
 vesktop
-waybar
-whats
-whatsie-git
 wireplumber
 wl-clipboard
 wlogout
