@@ -27,6 +27,7 @@
 !/.config/shell/aliasrc
 !/.config/shell/shortcutrc
 
+!/.config/kitty/**
 !/.config/waybar/**
 !/.config/xremap/**
 !/.config/swaylog/**
