@@ -1,13 +1,21 @@
-set previewer ~/.config/lf/preview
-set cleaner ~/.config/lf/cleaner
+# Interpreter for shell commands
+set shell sh
 
-# Basic vars
+set previewer ctpv
+set cleaner ctpvclear
+&ctpv -s $id
+&ctpvquit $id
+
+# Basic commands
 set shellopts '-eu'
 set ifs "\n"
 set scrolloff 10
 set icons true
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
 set drawbox true
+set sixel true
+
+map <enter> shell
 
 # cmds/functions
 cmd open ${{
@@ -41,10 +49,6 @@ cmd delete ${{
 	notify-send -a "File manager" -t 3000 -u critical "Do do want to delete this? [y/n]"
 	read ans
 	[ $ans = "y" ] && rm -rf -- $fx && pkill mako && mako &
-}}
-
-cmd lfcd ${{
-    cd "$(command lf -print-last-dir "$@")"
 }}
 
 # cmd moveto ${{
