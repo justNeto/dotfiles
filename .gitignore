@@ -6,6 +6,7 @@
 !/.local/**
 
 # Include .config
+/.config/**
 !/.config/lf/**
 !/.config/mpv/**
 !/.config/paru/**
@@ -16,6 +17,7 @@
 !/.config/nemo/**
 !/.config/tmux/**
 !/.config/shell/**
+/.config/shell/.zcompdump
 !/.config/waybar/**
 !/.config/xremap/**
 !/.config/swaylog/**

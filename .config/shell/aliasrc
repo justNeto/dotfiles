@@ -27,7 +27,8 @@ alias \
 	cs="sudo chmod +x" \
 	sn="sudoedit" \
 	cd="z" \
-	upd="paru -Syu"
+	upd="paru -Syu" \
+	paru="paru --bottomup"
 
 alias \
 	cp="cp -iv" \
