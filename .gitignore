@@ -16,8 +16,10 @@
 !/.config/hypr/**
 !/.config/nemo/**
 !/.config/tmux/**
+
 !/.config/shell/**
 /.config/shell/.zcompdump
+
 !/.config/waybar/**
 !/.config/xremap/**
 !/.config/swaylog/**
