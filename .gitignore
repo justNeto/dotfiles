@@ -1,12 +1,16 @@
-# Ignore everything reversely
+## Ignore everything reversely ##
 *
 !*/
 
 # Include everything inside .local
 !/.local/**
 
-# Include .config
+## Including folders inside .config ##
+
+# Ignore everything inside .config
 /.config/**
+
+# Except the following
 !/.config/lf/**
 !/.config/mpv/**
 !/.config/paru/**
@@ -17,8 +21,11 @@
 !/.config/nemo/**
 !/.config/tmux/**
 
-!/.config/shell/**
-/.config/shell/.zcompdump
+!/.config/shell/.zshrc
+!/.config/shell/.zshenv
+!/.config/shell/inputrc
+!/.config/shell/aliasrc
+!/.config/shell/shortcutrc
 
 !/.config/waybar/**
 !/.config/xremap/**
@@ -26,6 +33,7 @@
 !/.config/alacritty/**
 !/.config/nwg-displays/**
 
+# Include at .gitignore folder these files
 !/.zprofile
 !/.stow-local-ignore
 !/.gitmodules
