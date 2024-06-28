@@ -63,12 +63,8 @@ bindkey "^[[P" delete-char # delete key sequence
 
 bindkey -s '^f' 'lfrun\n'
 bindkey -s '^s' 'lfrun $(fzf)\n'
-bindkey -s '^p' 'slypl\n' # select a playlist to listen to
-
-#bindkey -M menuselect 'h' vi-backward-char
-#bindkey -M menuselect 'k' vi-up-line-or-history
-#bindkey -M menuselect 'l' vi-forward-char
-#bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -s '^p' 'youtube-playlists\n' # select a playlist to listen to
+bindkey -s '^o' 'lfcd\n' # go to last dir
 
 # Load aliases and shortcuts if existent.
 [ -f "$ZDOTDIR/shortcutrc" ] && source "$ZDOTDIR/shortcutrc"

@@ -38,8 +38,7 @@ alias \
 	ffmpeg="ffmpeg -hide_banner"
 
 alias \
-	# ls="eza --icons -s=type --group-directories-first --total-size  \
-	# -brghHmMo"
+	ls="lsd --sort extension --group-dirs first --total-size --permission octal" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	cat="bat"
@@ -62,7 +61,7 @@ alias \
 
 # Miscellaneous
 alias \
-	m="cmatrix" \
+	m="cmatrix"
 	nf="fastfetch" \
 	img="imv" \
 	vid="mpv" \
@@ -70,6 +69,7 @@ alias \
 	pdf="zathura" \
 	open="xdg-open" \
 	pong="ping" \
+	ssh-ger="ssh -i ~/.ssh/tecVmTeam0002_key.pem tecUserTeam0002@40.124.173.41"
 
 # Edit wallpaper stuff
 alias \

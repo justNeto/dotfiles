@@ -19,3 +19,7 @@ builtin_box_drawing = false
 
 [cursor]
 style = { shape = "Block", blinking = "Never" }
+
+#[keyboard]
+#bindings = [{ 'Plus', 'Command', 'IncreaseFont' }]
+#bindings = [{ 'Plus', 'Command', 'IncreaseFont' }]

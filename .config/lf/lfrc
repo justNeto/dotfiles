@@ -43,6 +43,10 @@ cmd delete ${{
 	[ $ans = "y" ] && rm -rf -- $fx && pkill mako && mako &
 }}
 
+cmd lfcd ${{
+    cd "$(command lf -print-last-dir "$@")"
+}}
+
 # cmd moveto ${{
 # 	clear; tput cup $(($(tput lines)/3)); tput bold
 # 	set -f
@@ -81,21 +85,19 @@ map <c-f> $lf -remote "send $id select '$(fzf)'"
 map gh
 map F createfile
 map f dragfile
-
 map g top
 map D delete
 map E extract
-map C copyto
-map M moveto
-
 map <c-n> push :mkdir<space>
 map <c-s> set hidden!
-map <enter> $setsid -f $TERMINAL >/dev/null 2>&1
-
-map A rename # at the very end
-map I push A<c-a> # at the very beginning
-map i push A<a-b><a-b><a-f> # before special char
-map a push A<a-b> # after specital char
-map c push A<c-u> # new rename
+map A rename							# at the very end
+map I push A<c-a>						# at the very beginning
+map i push A<a-b><a-b><a-f>				# before special char
+map a push A<a-b>						# after specital char
+map c push A<c-u>						# new rename
+map C clear
 
 map B bulkrename
+
+#map C copyto
+#map M moveto
