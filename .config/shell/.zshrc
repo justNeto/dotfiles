@@ -54,6 +54,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Bind keys : can check for a key sequence using <C-v>
 bindkey -v
 export KEYTIMEOUT=1
+export TERM=xterm
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line

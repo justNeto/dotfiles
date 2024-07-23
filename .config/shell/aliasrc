@@ -42,11 +42,10 @@ alias \
 	ls="lsd --sort extension --group-dirs first --total-size --permission octal" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	cat="bat"
+	cat="bat" \
+	ssh-ger="ssh -i ~/.ssh/tecVmTeam0002_key.pem -L 8000:localhost:8000 tecUserTeam0002@40.124.173.41"
 
 # Git aliases
-# gcb - change branch
-# gnb - new branch
 alias \
 	gcl="git clone" \
 	gA="git add -A" \
@@ -58,7 +57,7 @@ alias \
 	gb="git branch" \
 	gnb="git checkout -b" \
 	gcb="git checkout" \
-	gbu="git remote update origin --prune" \
+	gbu="git remote update origin --prune"
 
 # Miscellaneous
 alias \
@@ -69,8 +68,7 @@ alias \
 	aud="mpv" \
 	pdf="zathura" \
 	open="xdg-open" \
-	pong="ping" \
-	ssh-ger="ssh -i ~/.ssh/tecVmTeam0002_key.pem tecUserTeam0002@40.124.173.41"
+	pong="ping"
 
 # Edit wallpaper stuff
 alias \
