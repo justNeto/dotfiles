@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-pkill -x rwp
+pkill rwp
+killall rwp
 
 [ ! -f /tmp/sfwrw ] && touch /tmp/sfwrw && (rwp &) && exit
 [ -f /tmp/sfwrw ] && rm /tmp/sfwrw && (rwp &) && exit

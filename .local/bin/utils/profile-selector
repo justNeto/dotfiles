@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Set ws variable to the output of the 'wofi' command
-# ws=$(echo 'justNeto\nUniversity' | wofi --show=dmenu)
-ws=$(echo 'justNeto\nUniversity' | wofi --show=dmenu | tr -d '[:space:]')
+# ws=$(echo 'justNeto\nProfesional' | wofi --show=dmenu)
+ws=$(echo 'justNeto\nProfesional' | wofi --show=dmenu | tr -d '[:space:]')
 
-[[ -z "$ws" ]] && notify-send "Profile not selected" && firefox -P justNeto || firefox -P $ws
+[[ -z "$ws" ]] && notify-send "profile not selected" && firefox -P justNeto || firefox -P $ws

@@ -2,10 +2,11 @@
 
 alias \
 	ezp="nvim ${HOME}/.zprofile" \
-	ezrc="nvim ${ZDOTDIR}/.zshrc" \
 	ezal="nvim ${ZDOTDIR}/aliasrc" \
 	ezsht="nvim ${ZDOTDIR}/shortcutrc" \
 	ezshv="nvim ${ZDOTDIR}/.zshenv" \
+	ezrc="nvim ${ZDOTDIR}/.zshrc" \
+	ehyp="nvim ${XDG_CONFIG_DIR}/hypr/" \
 
 alias \
 	cac="lfrun ${HOME}/.cache" \
