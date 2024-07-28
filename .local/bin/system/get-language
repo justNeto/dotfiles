@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 active_lang=$(hyprctl devices | rg xremap -A2 | rg active | awk '{print $3}')
 

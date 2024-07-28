@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 
 var=$(printf "lock\nshutdown\nreboot\nleave" | wofi --show dmenu -i -p 'What will you do with the system')
 

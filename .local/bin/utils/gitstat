@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Detect if the current directory is part of a git folder and which branch is part of
 #

@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-updates=$(checkupdates | wc -l)
-#
-if [[ updates -gt 0 ]] ; then
-	exit 0
-else
-	exit 1
-fi

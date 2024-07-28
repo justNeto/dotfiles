@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Define the directory to search for subdirectories
 directory_to_search="/home/neto/.local/bin/"

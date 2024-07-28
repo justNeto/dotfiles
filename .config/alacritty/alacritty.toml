@@ -1,9 +1,5 @@
 live_config_reload = true
 
-[shell]
-program = "/bin/zsh"
-args = ["-l"]
-
 [scrolling]
 history = 5000
 

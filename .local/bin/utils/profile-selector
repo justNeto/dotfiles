@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # Set ws variable to the output of the 'wofi' command
 # ws=$(echo 'justNeto\nUniversity' | wofi --show=dmenu)
