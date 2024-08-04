@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-pkill rwp
-killall rwp
+[ -f /tmp/sfwrw ] && rm /tmp/sfwrw || touch /tmp/sfwrw 
 
-[ ! -f /tmp/sfwrw ] && touch /tmp/sfwrw && (rwp &) && exit
-[ -f /tmp/sfwrw ] && rm /tmp/sfwrw && (rwp &) && exit
+[ -f /tmp/rwp_pid ] && kill -15 $(cat /tmp/rwp_pid) && rm /tmp/rwp_pid 
+[ ! -f /tmp/rwp_pid ] && rwp & pid=$! ; echo $pid > /tmp/rwp_pid
+
