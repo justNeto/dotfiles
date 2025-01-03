@@ -41,8 +41,8 @@ changeSfwWallpaper ()
 
 while true
 do
-	[ -f /tmp/sfwrw ] && changeSfwWallpaper # set if file exist
-	[ ! -f /tmp/sfwrw ]  && changeNsfwWallpaper # sets if file does not exist
+	[ ! -f /tmp/sfwrw ] && changeSfwWallpaper # set if file exist
+	[ -f /tmp/sfwrw ]  && changeNsfwWallpaper # sets if file does not exist
 
 	changeWallpaperTimer="$(setTimer)" # sets timer for changing wallpaper
 
