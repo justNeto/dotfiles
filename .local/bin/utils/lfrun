@@ -1,9 +1,0 @@
-#!/usr/bin/env zsh
-
-(cat ~/.cache/wal/sequences &)
-
-set -e
-
-source $XDG_CONFIG_DIR/lf/icons
-
-lf "$@" 3>&-
