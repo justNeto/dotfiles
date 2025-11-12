@@ -1,179 +1,160 @@
 {
-	"layer": "top",
-	"position": "top",
-	"mod": "dock",
-	"exclusive": true,
-	"passthrough": false,
-	"gtk-layer-shell": true,
-	"height": 0,
-
-	"modules-left": [
-		"hyprland/workspaces",
-		"backlight",
-		"pulseaudio#source",
-		"pulseaudio#sink",
-		"custom/nemo",
-		"custom/term",
-		"bluetooth"
-	],
-
-	"modules-center": [
-		"hyprland/window",
-		"tray",
-		"custom/updates",
-	],
-
-	"modules-right": [
-		"custom/language",
-		"memory",
-		"cpu",
-		// "network",
-		"battery",
-		"custom/date",
-		"custom/clock"
-	],
-
-	"hyprland/window": {
-		"format": "{}",
-		"max-length" : 40,
-		"active-only" : true
-	},
-
-	"hyprland/workspaces": {
-		"format": "{name}",
-			// "1": "",
-		"sort-by-number": true
-	},
-
-	"custom/updates": {
-		"format": "󰚰 {}",
-		"interval": 7200,                     // every two hours
-		"tooltip": false,
-		"exec": "checkupdates | wc -l",
-		"exec-if": "check-updates",
-		"on-click": "alacritty -e sudo paru -Syu ; pkill -SIGRTMIN+8 waybar", // update system
-		"signal": 8
-	},
-
-	"custom/language": {
-		"format": " {}",
-		"tooltip": false,
-		"exec": "get-language",
-		"on-click": "hyprctl switchxkblayout xremap next ; pkill -SIGRTMIN+10 waybar",
-		"signal": 10
-	},
-
-	"custom/nemo": {
-		"format": "   ",
-		"tooltip" : false,
-		"on-click": "nemo",
-	},
-
-	"custom/term": {
-		"format": "   ",
-		"tooltip": false,
-		"on-click": "alacritty",
-	},
-
-	"tray": {
-		"icon-size": 13,
-		"spacing": 10
-	},
-
-	"custom/clock": {
-		"format": " {}",
-		"exec": "get-time",
-		"interval": 1,
-		"tooltip" : false,
-	},
-
-	"custom/date": {
-		"format": " {}",
-		"exec": "get-date",
-		"interval": 18000,
-		"tooltip" : false,
-	},
-
-	"battery": {
-		"states": {
-			"good": 95,
-			"warning": 30,
-			"critical": 20
-		},
-		"tooltip" : false,
-		"format": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": "󰚥 {capacity}%",
-		"format-icons": ["", "", "", "", ""]
-	},
-
-	"backlight": {
-	    "device": "intel_backlight",
-	    "format": "{icon} {percent}%",
-		"tooltip": false,
-	    "format-icons": ["󰹐", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
-	    "on-scroll-down": "brightnessctl set 1%+",
-	    "on-scroll-up": "brightnessctl set 1%-",
-		"on-click": "toggle-screen"
-	},
-
-	"pulseaudio#source": {
-		"format": "{format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "󰍭",
-		"on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
-		"on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
-		"on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
-	},
-
-	"pulseaudio#sink": {
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "ext/workspaces",
+        "dwl/window#layout",
+        "backlight",
+        "pulseaudio#source",
+        "pulseaudio#sink",
+        "custom/fm",
+        "custom/term"
+    ],
+    "modules-center": [
+        "dwl/window#title",
+        "tray"
+    ],
+    "modules-right": [
+        // "custom/language",
+        "memory",
+        "cpu",
+        "battery",
+        "custom/date",
+        "custom/clock"
+    ],
+    "ext/workspaces": {
+        "format": "{icon}",
+        "ignore-hidden": false,
+        "on-click": "activate",
+        "sort-by-id": true
+    },
+    // "custom/language": {
+    //     "format": " {}",
+    //     "tooltip": false,
+    //     "exec": "get-language",
+    //     "on-click": "hyprctl switchxkblayout xremap next ; pkill -SIGRTMIN+10 waybar",
+    //     "signal": 10
+    // },
+    "custom/fm": {
+        "format": "   ",
+        "tooltip": false,
+        "on-click": "dolphin"
+    },
+    "custom/term": {
+        "format": "   ",
+        "tooltip": false,
+        "on-click": "$TERM"
+    },
+    "custom/clock": {
+        "format": " {}",
+        "exec": "get-time",
+        "interval": 1,
+        "tooltip": false
+    },
+    "custom/date": {
+        "format": " {}",
+        "exec": "get-date",
+        "interval": 18000,
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10
+    },
+    "dwl/tags": {
+        "num-tags": 9
+    },
+    "dwl/window#layout": {
+        "format": "[{layout}]"
+    },
+    "dwl/window#title": {
+        "format": "{title}"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "tooltip": false,
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "tooltip": false,
+        "format-icons": [
+            "󰹐",
+            "󱩎",
+            "󱩏",
+            "󱩐",
+            "󱩑",
+            "󱩒",
+            "󱩓",
+            "󱩔",
+            "󱩕",
+            "󱩖",
+            "󰛨"
+        ],
+        "on-scroll-down": "brightnessctl set 1%+",
+        "on-scroll-up": "brightnessctl set 1%-",
+        "on-click": "toggle-screen"
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "󰍭",
+        "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
+    },
+    "pulseaudio#sink": {
         "format": "{volume}% {icon}",
         "format-muted": "󰸈",
         "format-bluetooth": "{volume}% {icon} ",
         "format-icons": {
-            "headphones": [" ", " ", " "],
-            "headset":  [" ", " ", " "],
-            "default": ["", "", ""]
+            "headphones": [
+                " ",
+                " ",
+                " "
+            ],
+            "headset": [
+                " ",
+                " ",
+                " "
+            ],
+            "default": [
+                "",
+                "",
+                ""
+            ]
         },
         "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle",
         "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 1%-",
         "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 1%+"
     },
-
-	"cpu": {
-		"interval": 5,
-		"format": " {usage:>2}%",
-		"on-click": "alacritty -e term-wrapper btop"
-	},
-
-	"memory": {
-		"interval": 30,
-		"format": " {used:0.1f}/{total:0.1f}",
-		"on-click": "alacritty -e term-wrapper btop"
-	},
-
-	// "network": {
-	// 	"interface": "wlan0 || enp48s0 ",
-	// 	"format": "󰛳 {ifname}",
-	// 	"format-wifi": " {signalStrength}%: {essid}",
-	// 	"format-ethernet": "󰈀 {ifname}",
-	// 	"format-disconnected": "󰲛",
-	// 	"tooltip-format": "{ifname}",
-	// 	"tooltip-format-wifi": "{essid} ({signalStrength}%)",
-	// 	"tooltip-format-ethernet": " {ifname}",
-	// 	"tooltip-format-disconnected": "Disconnected",
-	// 	"max-length": 15
-	// },
-
-	"bluetooth": {
-		"format": "󰂯 {status}",
-		"format-connected": "󰂱 {device_alias}",
-		"on-click" : "blueman-manager",
-		"format-connected-battery": "󰥉 {device_alias} {device_battery_percentage}%",
-		"format-device-preference": [ "WH-1000XM5" ], // preference list deciding the displayed device
-		"tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
-	}
+    "cpu": {
+        "interval": 5,
+        "format": " {usage:>2}%",
+        "on-click": "alacritty -e term-wrapper btop"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.1f}/{total:0.1f}",
+        "on-click": "alacritty -e term-wrapper btop"
+    }
 }

@@ -1,45 +1,35 @@
 #!/usr/bin/env zsh
 
-# Detect if the current directory is part of a git folder and which branch is part of
-#
+dispGitInfo() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
 
-dispGitInfo()
-{
-	git branch > /tmp/gitbranch
-
-	while IFS= read -r line; do
-  		for (( i=0; i<${#line}; i++ )); do
-			if [[ "${line:$i:1}" == "*" ]] ; then
-			line=$(echo $line | awk '{ print substr( $0, 3 ) }')
-			[[ "$line" == "main" ]] && echo "  -> on $line" || echo "  -> on  $line"
-		fi
-  	done
-	done < "/tmp/gitbranch"
-
-	rm /tmp/gitbranch
+  if [[ "$branch" == "main" ]]; then
+    echo "  -> on $branch"
+  else
+    echo "  -> on  $branch"
+  fi
 }
 
-dispSubInfo()
-{
-	git branch > /tmp/gitbranch
+dispSubInfo() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
 
-	while IFS= read -r line; do
-  		for (( i=0; i<${#line}; i++ )); do
-			if [[ "${line:$i:1}" == "*" ]] ; then
-			line=$(echo $line | awk '{ print substr( $0, 3 ) }')
-			[[ "$line" == "main" ]] && echo "Inside   repo -> on $line" || echo "inside   repo -> on  $line"
-		fi
-  	done
-	done < "/tmp/gitbranch"
-
-	rm /tmp/gitbranch
+  if [[ "$branch" == "main" ]]; then
+    echo "inside   repo -> on $branch"
+  else
+    echo "inside   repo -> on  $branch"
+  fi
 }
 
-checkIfGitDir()
-{
-	[ -d .git ] && dispGitInfo && exit
-	[[ $(git rev-parse --git-dir 2>/dev/null >/dev/null ; echo $?) == 0 ]] && dispSubInfo && exit
-	[[ $(git rev-parse --git-dir 2>/dev/null >/dev/null ; echo $?) == 128 ]] && echo "no  " && exit
+checkIfGitDir() {
+  if [[ -d .git ]]; then
+    dispGitInfo
+  elif git rev-parse --git-dir > /dev/null 2>&1; then
+    dispSubInfo
+  else
+    echo "no  "
+  fi
 }
 
 checkIfGitDir

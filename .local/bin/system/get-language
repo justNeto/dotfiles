@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
-# active_lang=$(hyprctl devices | rg -w 'zsa-technology-labs-ergodox-ez(\s|$)' -A2 | rg active | awk '{print $3}')
-active_lang=$(hyprctl devices | rg -w 'corsair-corsair-k100-rgb-optical-mechanical-gaming-keyboard' -A2 | rg active | awk '{print $3}')
+active_lang=$(hyprctl devices | rg -w 'zsa-technology-labs-ergodox-ez(\s|$)' -A2 | rg active | awk '{print $3}')
+# active_lang=$(hyprctl devices | rg -w 'corsair-corsair-k100-rgb-optical-mechanical-gaming-keyboard' -A2 | rg active | awk '{print $3}')
 
 [[ $active_lang == "Spanish" ]] && notify-send 'Ahora español' && echo "Es" && exit 0
 [[ $active_lang == "English" ]] && notify-send 'Changing to english' && echo "En" && exit 0

@@ -4,4 +4,4 @@
 # ws=$(echo 'justNeto\nProfesional' | wofi --show=dmenu)
 ws=$(echo 'justNeto\nProfesional' | wofi --show=dmenu | tr -d '[:space:]')
 
-[[ -z "$ws" ]] && notify-send "Profile not selected"  || firefox -P $ws
+[[ -z "$ws" ]] && notify-send "Profile not selected"  || MOZ_ENABLE_WAYLAND=1 zen -P $ws

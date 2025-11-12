@@ -1,7 +1,8 @@
 {
-  "view-scale": 0.15,
+  "view-scale": 0.2,
   "snap-threshold": 10,
   "indicator-timeout": 500,
   "custom-mode": [],
-  "use-desc": false
+  "use-desc": false,
+  "confirm-timeout": 10
 }

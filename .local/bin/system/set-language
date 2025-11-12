@@ -1,0 +1,48 @@
+#!/usr/bin/env zsh
+
+layout_name=""
+wofi_options=""
+notify_message=""
+supported_languages=("Spanish" "English" "German") # list of supported languages
+
+# Select active language and build wofi prompt
+active_language=$(hyprctl devices | rg -w 'zsa-technology-labs-ergodox-ez(\s|$)' -A2 | rg active | awk '{print $3}')
+wofi_prompt="Current language selected is {{$(echo $active_language | awk '{print tolower($1)}')}}; please select new language"
+
+# Remove active_language of array list and only use these to form wofi prompt
+supported_languages=( "${supported_languages[@]/$active_language}" )
+
+aux=0
+for supported_language in ${supported_languages[@]}
+do
+    if [[ $aux == 0 ]] then;
+        wofi_options+="$supported_language"
+        aux+=1
+    else
+        wofi_options+="\n$supported_language"
+    fi
+done
+
+selected=$(printf $wofi_options | wofi --dmenu --prompt=$wofi_prompt || echo 'English')
+notify_message="Language changed to $selected"
+
+case $selected in
+  English)
+    layout_name="us"
+    ;;
+
+  Spanish)
+    layout_name="latam"
+    ;;
+
+  German)
+    layout_name="de"
+    ;;
+
+  *)
+    layout_name="us"
+    ;;
+esac
+
+notify-send "$notify_message"
+hyprctl keyword input:kb_layout $layout_name
