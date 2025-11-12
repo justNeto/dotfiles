@@ -10,8 +10,6 @@
 # Ignore everything inside .config
 /.config/**
 
-# Except the following
-!/.config/lf/**
 !/.config/mpv/**
 !/.config/paru/**
 !/.config/btop/**
@@ -33,6 +31,7 @@
 !/.config/swaylog/**
 !/.config/alacritty/**
 !/.config/nwg-displays/**
+!/.config/mango/**
 
 # Include at .gitignore folder these files
 !/.zprofile
