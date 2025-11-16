@@ -1,41 +1,42 @@
-## Ignore everything reversely ##
-*
-!*/
+*           # ignore everything by default
+!*/         # allow directory traversal (required for unignores)
 
-# Include everything inside .local
-!/.local/**
+########################################
+# Top-level files to include
+########################################
+!README.md
+!required.txt
+!.gitignore
+!.gitmodules
+!.stow-local-ignore
+!.local/
+!.local/**
 
-## Including folders inside .config ##
+########################################
+# .config — allow only specific subfolders
+########################################
 
-# Ignore everything inside .config
-/.config/**
+# Allow .config itself
+.config/
 
-!/.config/mpv/**
-!/.config/paru/**
-!/.config/btop/**
-!/.config/mako/**
-!/.config/wofi/**
-!/.config/hypr/**
-!/.config/nemo/**
-!/.config/tmux/**
+# Unignore only the SUBDIRS within config
+!.config/mpv/
+!.config/btop/
+!.config/mako/
+!.config/wofi/
+!.config/hypr/
+!.config/tmux/
+!.config/mango/
+!.config/nvim/
+!.config/waybar/
 
-!/.config/shell/.zshrc
-!/.config/shell/.zshenv
-!/.config/shell/inputrc
-!/.config/shell/aliasrc
-!/.config/shell/shortcutrc
-
-!/.config/kitty/**
-!/.config/waybar/**
-!/.config/xremap/**
-!/.config/swaylog/**
-!/.config/alacritty/**
-!/.config/nwg-displays/**
-
-# Include at .gitignore folder these files
-!/.zprofile
-!/.stow-local-ignore
-!/.gitmodules
-!/.gitignore
-!/README.md
-!/required.txt
+# Unignore now CONTENT
+!.config/mpv/**
+!.config/btop/**
+!.config/mako/**
+!.config/wofi/**
+!.config/hypr/**
+!.config/tmux/**
+!.config/mango/**
+!.config/nvim/**
+!.config/waybar/**
