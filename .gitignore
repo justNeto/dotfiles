@@ -16,9 +16,6 @@
 # .config — allow only specific subfolders
 ########################################
 
-# Allow .config itself
-.config/
-
 # Unignore only the SUBDIRS within config
 !.config/mpv/
 !.config/btop/
