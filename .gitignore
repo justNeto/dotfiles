@@ -1,39 +1,50 @@
-*           # ignore everything by default
-!*/         # allow directory traversal (required for unignores)
+# 1. IGNORE EVERYTHING by default.
+*
 
-########################################
-# Top-level files to include
-########################################
+# 2. UN-IGNORE specific top-level files.
+# (We must also un-ignore the .gitignore file itself!)
+!.gitignore
 !README.md
 !required.txt
-!.gitignore
 !.gitmodules
 !.stow-local-ignore
+
+# 3. UN-IGNORE the .local directory and ALL its contents.
+# (We un-ignore the directory, then its contents recursively).
 !.local/
 !.local/**
 
-########################################
-# .config — allow only specific subfolders
-########################################
+# 4. UN-IGNORE the .config directory itself (so Git can look inside).
+# This rule is critical. It does NOT un-ignore files inside,
+# which are still caught by the global '*'
+!.config/
 
-# Unignore only the SUBDIRS within config
+# 5. UN-IGNORE the specific .config subdirectories you WANT.
+# For each one, un-ignore the directory AND its recursive contents.
 !.config/mpv/
-!.config/btop/
-!.config/mako/
-!.config/wofi/
-!.config/hypr/
-!.config/tmux/
-!.config/mango/
-!.config/nvim/
-!.config/waybar/
-
-# Unignore now CONTENT
 !.config/mpv/**
+
+!.config/btop/
 !.config/btop/**
+
+!.config/mako/
 !.config/mako/**
+
+!.config/wofi/
 !.config/wofi/**
+
+!.config/hypr/
 !.config/hypr/**
+
+!.config/tmux/
 !.config/tmux/**
-!.config/mango/**
-!.config/nvim/**
+
+!.config/mango/
+!.config/mango/config.conf
+!.config/mango/autostart.sh
+!.config/mango/todo.md
+
+!.config/nvim/
+
+!.config/waybar/
 !.config/waybar/**

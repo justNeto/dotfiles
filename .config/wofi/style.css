@@ -1,0 +1,35 @@
+* {
+    font-family: Inconsolata Nerd Font;
+    font-size: 22px;
+
+    border-radius: 25px;
+	color: white;
+	background-color: rgba(30, 30, 46, 0.35);
+}
+
+#outer-box {
+	border: 1px solid white;
+}
+
+#img {
+	padding: 0.2rem 0.4rem;
+}
+
+#entry {
+    padding: 0.6rem;
+}
+
+#entry:selected {
+	border: 1px solid white;
+}
+
+#text {
+	/* color: white; */
+}
+
+#input {
+    padding: 1rem;
+	border: 1px solid white;
+	background-color: rgba(30, 30, 46, 0.35);
+	color: white;
+}

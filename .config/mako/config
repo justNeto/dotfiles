@@ -1,0 +1,43 @@
+# Take a look at the mako manpage with the command:
+#   man 5 mako
+# To view all configuration options.
+
+font=Inconsolata Nerd Font 14
+format=<b>%a ⏵</b> %s\n%b
+sort=-time
+output=DP-2
+layer=overlay
+anchor=top-right
+background-color=#1e1e2e
+width=300
+height=110
+margin=5
+padding=0,5,10
+border-size=2
+border-radius=15
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+
+[urgency=low]
+border-color=#09dcdc
+default-timeout=3000
+
+[urgency=normal]
+border-color=#8409ce
+default-timeout=3000
+
+[urgency=critical]
+border-color=#ff511c
+default-timeout=0
+
+[app-name=vesktop]
+border-color=#7289da
+
+[summary~="log-.*"]
+border-color=#a3be8c
+
+[app-name=vesktop summary~="(.*(^| )orz|ORZ|sto|STO|otl|OTL( |$).*)"]
+border-color=#7289da
+invisible=1
