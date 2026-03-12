@@ -1,0 +1,176 @@
+# ~/.config/starship.toml
+
+format = """
+╭─   \\( \\[$username\\] | \\[$directory\\]$git_branch \\)
+$character
+"""
+
+add_newline = true
+
+[directory]
+style = "bold yellow"
+read_only = " 󰌾"
+format = "[$path]($style)"
+truncate_to_repo = false
+truncation_length = 0
+
+[username]
+style_user = "violet"
+format = "($user)"
+show_always = true
+
+[character]
+success_symbol = "[╰─](bold green)"
+error_symbol = "[╰─](bold red)"
+
+[git_branch]
+symbol = " "
+style = "white"
+format = " | \\[[$symbol$branch]($style)\\]"
+
+[git_status]
+style = "red"
+format = "([$all_status]($style)) "
+
+[git_state]
+style = "blue"
+format = "( $state( $progress_current/$progress_total)) "
+
+[git_commit]
+tag_symbol = "  "
+
+[aws]
+symbol = "  "
+[buf]
+symbol = " "
+[bun]
+symbol = " "
+[c]
+symbol = " "
+[cpp]
+symbol = " "
+[cmake]
+symbol = " "
+[conda]
+symbol = " "
+[crystal]
+symbol = " "
+[dart]
+symbol = " "
+[deno]
+symbol = " "
+[docker_context]
+symbol = " "
+[elixir]
+symbol = " "
+[elm]
+symbol = " "
+[fennel]
+symbol = " "
+[fossil_branch]
+symbol = " "
+[gcloud]
+symbol = "  "
+[golang]
+symbol = " "
+[guix_shell]
+symbol = " "
+[haskell]
+symbol = " "
+[haxe]
+symbol = " "
+[hg_branch]
+symbol = " "
+[java]
+symbol = " "
+[julia]
+symbol = " "
+[kotlin]
+symbol = " "
+[lua]
+symbol = " "
+[memory_usage]
+symbol = "󰍛 "
+[meson]
+symbol = "󰔷 "
+[nim]
+symbol = "󰆥 "
+[nix_shell]
+symbol = " "
+[nodejs]
+symbol = " "
+[ocaml]
+symbol = " "
+[package]
+symbol = "󰏗 "
+[perl]
+symbol = " "
+[php]
+symbol = " "
+[pijul_channel]
+symbol = " "
+[pixi]
+symbol = "󰏗 "
+[python]
+symbol = " "
+[rlang]
+symbol = "󰟔 "
+[ruby]
+symbol = " "
+[rust]
+symbol = "󱘗 "
+[scala]
+symbol = " "
+[swift]
+symbol = " "
+[zig]
+symbol = " "
+[gradle]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "

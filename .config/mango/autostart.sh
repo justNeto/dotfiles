@@ -3,3 +3,5 @@ mako &
 swww-daemon &
 rwp &
 dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+disable_trackpad_when_typing &
+disable_backlight &

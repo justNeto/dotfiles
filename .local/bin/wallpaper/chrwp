@@ -1,7 +1,5 @@
 #!/usr/bin/env zsh
 
-[ -f /tmp/sfwrw ] && rm /tmp/sfwrw || touch /tmp/sfwrw 
-
-[ -f /tmp/rwp_pid ] && kill -15 $(cat /tmp/rwp_pid) && rm /tmp/rwp_pid 
-[ ! -f /tmp/rwp_pid ] && rwp & pid=$! ; echo $pid > /tmp/rwp_pid
-
+[ -f /tmp/sfwrw ] && rm /tmp/sfwrw || touch /tmp/sfwrw ; echo a
+[ -f /tmp/rwp_pid ] && kill -15 $(\cat /tmp/rwp_pid) && rm /tmp/rwp_pid ; echo b
+[ ! -f /tmp/rwp_pid ] && rwp & pid=$! ; echo $pid > /tmp/rwp_pid ; echo c
