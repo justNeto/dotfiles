@@ -2,28 +2,18 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 0,
     "modules-left": [
-        "ext/workspaces",
         "dwl/window#layout",
-        "backlight",
+        "ext/workspaces",
         "pulseaudio#source",
-        "pulseaudio#sink",
-        "custom/fm",
-        "custom/term"
+        "pulseaudio#sink"
     ],
     "modules-center": [
-        "dwl/window#title",
-        "tray"
+        "dwl/window#title"
     ],
     "modules-right": [
-        // "custom/language",
-        "memory",
         "cpu",
-        "battery",
+        "memory",
         "custom/date",
         "custom/clock"
     ],
@@ -31,24 +21,10 @@
         "format": "{icon}",
         "ignore-hidden": false,
         "on-click": "activate",
-        "sort-by-id": true
+        "sort-by-id": true,
     },
-    // "custom/language": {
-    //     "format": " {}",
-    //     "tooltip": false,
-    //     "exec": "get-language",
-    //     "on-click": "hyprctl switchxkblayout xremap next ; pkill -SIGRTMIN+10 waybar",
-    //     "signal": 10
-    // },
-    "custom/fm": {
-        "format": "   ",
-        "tooltip": false,
-        "on-click": "dolphin"
-    },
-    "custom/term": {
-        "format": "   ",
-        "tooltip": false,
-        "on-click": "$TERM"
+    "dwl/window#layout": {
+        "format": "[{layout}] "
     },
     "custom/clock": {
         "format": " {}",
@@ -66,66 +42,18 @@
         "icon-size": 13,
         "spacing": 10
     },
-    "dwl/tags": {
-        "num-tags": 9
-    },
-    "dwl/window#layout": {
-        "format": "[{layout}]"
-    },
-    "dwl/window#title": {
-        "format": "{title}"
-    },
-    "battery": {
-        "states": {
-            "good": 95,
-            "warning": 30,
-            "critical": 20
-        },
-        "tooltip": false,
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{icon} {percent}%",
-        "tooltip": false,
-        "format-icons": [
-            "󰹐",
-            "󱩎",
-            "󱩏",
-            "󱩐",
-            "󱩑",
-            "󱩒",
-            "󱩓",
-            "󱩔",
-            "󱩕",
-            "󱩖",
-            "󰛨"
-        ],
-        "on-scroll-down": "brightnessctl set 1%+",
-        "on-scroll-up": "brightnessctl set 1%-",
-        "on-click": "toggle-screen"
-    },
     "pulseaudio#source": {
         "format": "{format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "󰍭",
+        "format-source": "  {volume}% ",
+        "format-source-muted": " 󰍭 0% ",
         "on-click": "wpctl set-mute @DEFAULT_SOURCE@ toggle",
         "on-scroll-down": "wpctl set-volume @DEFAULT_SOURCE@ 1%-",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SOURCE@ 1%+"
     },
     "pulseaudio#sink": {
-        "format": "{volume}% {icon}",
-        "format-muted": "󰸈",
-        "format-bluetooth": "{volume}% {icon} ",
+        "format": " {icon}  {volume}% ",
+        "format-muted": "  󰸈 0% ",
+        "format-bluetooth": " {icon} {volume}% ",
         "format-icons": {
             "headphones": [
                 " ",
@@ -147,14 +75,17 @@
         "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 1%-",
         "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 1%+"
     },
+    "dwl/window#title": {
+        "format": "{title}"
+    },
     "cpu": {
         "interval": 5,
         "format": " {usage:>2}%",
-        "on-click": "alacritty -e term-wrapper btop"
+        "on-click": "ghostty -e term-wrapper btop"
     },
     "memory": {
         "interval": 30,
         "format": " {used:0.1f}/{total:0.1f}",
-        "on-click": "alacritty -e term-wrapper btop"
+        "on-click": "ghostty -e term-wrapper btop"
     }
 }

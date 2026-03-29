@@ -1,0 +1,16 @@
+theme = Fahrenheit
+
+class = com.ghostty.neto
+
+font-family = Inconsolata Nerd Font
+font-size = 18
+
+cursor-style = block_hollow
+cursor-style-blink = false
+adjust-cursor-thickness = 20
+confirm-close-surface = false
+window-inherit-working-directory = false
+
+keybind = clear
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
